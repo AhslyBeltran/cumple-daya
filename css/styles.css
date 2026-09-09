@@ -1,0 +1,291 @@
+/* Variables de colores Kawaii / Sanrio */
+:root {
+  --pink-soft: #ffe5ec;
+  --pink-medium: #ffb3c6;
+  --pink-accent: #ff85a1;
+  --pink-dark: #ff477e;
+  --purple-soft: #f3e8ff;
+  --purple-accent: #c084fc;
+  --yellow-star: #fde047;
+  --text-color: #4a3e3d;
+  --card-bg: rgba(255, 255, 255, 0.88);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #ffe5ec 0%, #f3e8ff 50%, #ffe5ec 100%);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 15px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fondo animado de corazones/estrellas flotantes */
+.bg-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  bottom: -50px;
+  animation: floatUp 8s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Contenedor principal estilo Sanrio Card */
+.card-container {
+  position: relative;
+  z-index: 10;
+  max-width: 680px;
+  width: 100%;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 4px solid #fff;
+  box-shadow: 0 15px 35px rgba(255, 133, 161, 0.25),
+              0 0 20px rgba(192, 132, 252, 0.2);
+  padding: 35px 25px;
+  text-align: center;
+  animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Decoraciones Kawaii Sanrio */
+.sanrio-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.sanrio-badge {
+  background: var(--pink-soft);
+  border: 2px solid var(--pink-medium);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.9rem;
+  color: var(--pink-dark);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h1 {
+  font-family: 'Fredoka', cursive;
+  font-size: 2.3rem;
+  color: var(--pink-dark);
+  margin: 15px 0 10px 0;
+  text-shadow: 2px 2px 0px #fff;
+}
+
+.subtitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: var(--purple-accent);
+  margin-bottom: 20px;
+}
+
+/* Botón de Reproducción de Voz (Audio Reader) */
+.audio-control {
+  background: linear-gradient(45deg, var(--pink-accent), var(--purple-accent));
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 71, 126, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.audio-control:hover {
+  transform: translateY(-3deg) scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 71, 126, 0.4);
+}
+
+.audio-control:active {
+  transform: translateY(0);
+}
+
+.audio-control.playing {
+  background: linear-gradient(45deg, #ff477e, #e056fd);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 71, 126, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 71, 126, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 71, 126, 0); }
+}
+
+/* Carta / Mensaje */
+.letter-body {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  border: 2px dashed var(--pink-medium);
+  max-height: 450px;
+  overflow-y: auto;
+  margin-bottom: 25px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pink-medium) transparent;
+}
+
+.letter-body::-webkit-scrollbar {
+  width: 6px;
+}
+.letter-body::-webkit-scrollbar-thumb {
+  background-color: var(--pink-medium);
+  border-radius: 10px;
+}
+
+.letter-body p {
+  margin-bottom: 16px;
+}
+
+.highlight {
+  color: var(--pink-dark);
+  font-weight: 700;
+}
+
+.signature {
+  margin-top: 20px;
+  text-align: right;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  color: var(--pink-dark);
+  font-weight: bold;
+}
+
+/* Galería decorativa de stickers */
+.stickers-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 2rem;
+}
+
+.sticker {
+  background: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border: 2px solid var(--pink-soft);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.sticker:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Sorpresa interactiva */
+.surprise-btn {
+  background: white;
+  border: 2px solid var(--pink-accent);
+  color: var(--pink-dark);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.surprise-btn:hover {
+  background: var(--pink-soft);
+}
+
+/* Modal Sorpresa */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 400px;
+  border: 4px solid var(--pink-medium);
+  animation: popIn 0.4s ease;
+}
+
+.modal-content h3 {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--pink-dark);
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  margin-top: 15px;
+  background: var(--pink-dark);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* Adaptabilidad Móvil */
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  .subtitle { font-size: 1.4rem; }
+  .card-container { padding: 25px 15px; }
+  .letter-body { font-size: 0.98rem; padding: 18px; }
+}

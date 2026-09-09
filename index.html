@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumpleaños, Mi Daya ✨💗</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Personalizado en carpeta css/ -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Partículas de fondo -->
+  <div class="bg-particles" id="particles"></div>
+
+  <!-- Tarjeta Principal -->
+  <div class="card-container">
+    
+    <div class="sanrio-header">
+      <span class="sanrio-badge"><i class="fa-solid fa-ribbon"></i> Para ti</span>
+    </div>
+
+    <h1>¡Feliz Cumpleaños! 🎂✨</h1>
+    <div class="subtitle">Para mi querida Daya 💗</div>
+
+    <!-- Botón de Audio para Lectura de Voz -->
+    <button class="audio-control" id="playBtn" onclick="toggleReadLetter()">
+      <i class="fa-solid fa-volume-high" id="audioIcon"></i>
+      <span id="audioText">Escuchar la carta</span>
+    </button>
+
+    <!-- Cuerpo de la Carta -->
+    <div class="letter-body" id="letterText">
+      <p><strong>Feliz cumpleaños, mi Daya. 🥹💗✨</strong></p>
+
+      <p>Hoy quiero desearte un cumpleaños muy bonito y, sobre todo, deseo de corazón que Dios te permita cumplir muchísimos años más, llenos de momentos lindos, aprendizajes, alegrías y personas que te quieran de verdad. También le pido a Dios que te ayude a cumplir cada una de las metas y sueños que tengas, que nunca te falten motivos para seguir adelante y que, aunque algunas veces las cosas no salgan como esperas, siempre encuentres la fuerza para continuar.</p>
+
+      <p>Quiero aprovechar este día para decirte algo que quizás no te digo tanto como debería: <span class="highlight">te quiero muchísimo, Daya. 💗</span> Y te quiero no solamente por todos los momentos bonitos que hemos compartido, sino también por todos esos momentos en los que has estado conmigo cuando las cosas no han estado bien.</p>
+
+      <p>Gracias por estar en mis buenos y malos momentos. Gracias por apoyarme, por acompañarme, por escucharme, por cuidarme y, sobre todo, por hacerme reír incluso cuando quizás no tenía muchas ganas de hacerlo. Gracias por nunca hacerme sentir juzgada y por ser esa persona con la que he podido ser yo misma.</p>
+
+      <p>Para mí eres mi mejor amiga, y aunque actualmente estemos un poco distanciadas, eso no cambia el cariño ni el valor que tiene nuestra amistad para mí. Siento que nuestra amistad es diferente a muchas de las amistades que he tenido, porque contigo he vivido y sentido cosas que hacen que te tenga un lugar muy especial en mi corazón.</p>
+
+      <p>Te valoro muchísimo como persona y como amiga. Te respeto, te admiró y agradezco de verdad todo lo que has hecho por mí. Has estado, me has cuidado, me has apoyado y nunca me has hecho sentir que tenía que ser alguien diferente para poder contar contigo. Y eso es algo que nunca voy a olvidar.</p>
+
+      <p>A veces la distancia, el tiempo o las circunstancias hacen que las personas no estén tan cerca como antes, pero hay amistades que, aunque cambien algunas cosas, siguen siendo importantes. Y tú eres una de esas personas para mí. 🥹💗</p>
+
+      <p>Espero que este nuevo año de vida venga cargado de cosas bonitas para ti. Que puedas alcanzar todo eso que algún día has soñado, que conozcas lugares nuevos, que vivas momentos inolvidables, que tengas muchas razones para sonreír y que siempre estés rodeada de personas que te quieran, te respeten y te cuiden como tú mereces.</p>
+
+      <p>Nunca olvides lo mucho que vales y la persona tan especial que eres.</p>
+
+      <p>Gracias por ser mi Daya. ✨<br>
+      Gracias por cada risa, cada conversación, cada consejo, cada momento y hasta por esas pequeñas cosas que quizás para ti no significan tanto, pero que para mí sí han significado muchísimo.</p>
+
+      <p>Espero que la vida nos permita seguir compartiendo muchos momentos, seguir riéndonos juntas y, quién sabe, algún día mirar atrás y recordar todo lo que hemos vivido con una sonrisa.</p>
+
+      <p><strong>Feliz cumpleaños, mi Daya. 🎂💗✨</strong><br>
+      Te quiero muchísimo y siempre voy a valorar nuestra amistad.</p>
+
+      <div class="signature">
+        Con muchísimo cariño,<br>
+        tu amiga que te quiere mucho. 💗✨
+      </div>
+    </div>
+
+    <!-- Stickers decorativos con eventos individuales -->
+        <div class="stickers-container">
+          <div class="sticker" title="Hello Kitty (Celebra tu día)" onclick="showStickerMessage('kitty')">🎀</div>
+          <div class="sticker" title="My Melody (Dulzura y Luz)" onclick="showStickerMessage('melody')">🐰</div>
+          <div class="sticker" title="Kuromi (Fuerza y Poder)" onclick="showStickerMessage('kuromi')">🖤</div>
+          <div class="sticker" title="Cinnamoroll (Paz y Sueños)" onclick="showStickerMessage('cinnamoroll')">☁️</div>
+        </div>
+
+        <button class="surprise-btn" onclick="openModal()">✨ Haz clic para un abrazo virtual ✨</button>
+        
+      </div>
+
+      <!-- Modal para Mensajes de los Stickers -->
+      <div class="modal" id="stickerModal">
+        <div class="modal-content">
+          <div id="stickerIcon" style="font-size: 3.5rem; margin-bottom: 10px;">🎀</div>
+          <h3 id="stickerTitle" style="color: var(--pink-dark); font-family: 'Fredoka', sans-serif; margin-bottom: 12px;"></h3>
+          <p id="stickerMessage" style="line-height: 1.6; font-size: 1rem; color: #4a3e3d; text-align: center;"></p>
+          <button class="close-btn" onclick="closeModal('stickerModal')">¡Gracias! ✨</button>
+        </div>
+      </div>
+
+  </div>
+
+<!-- Modal Sorpresa -->
+  <div class="modal" id="surpriseModal">
+    <div class="modal-content">
+      <div style="font-size: 3rem; margin-bottom: 10px;">🫂✨💖</div>
+      <h3>¡Abrazo Virtual Enviado!</h3>
+      <p>No importa la distancia, ¡siempre cuentas conmigo! Que tengas un día tan hermoso como tú. 🌸</p>
+      <!-- Cambia esta línea para incluir 'surpriseModal' -->
+      <button class="close-btn" onclick="closeModal('surpriseModal')">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- JS Personalizado en carpeta js/ -->
+  <script src="js/script.js"></script>
+</body>
+</html>
